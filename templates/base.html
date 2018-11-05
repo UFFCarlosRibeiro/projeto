@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'produto/css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'produto/css/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'produto/css/jquery-ui.min.css' %}">
+    <title>{% block titulo %}Loja Virtual{% endblock %}</title>
+    <style>
+        {% block estilo %}
+
+        {% endblock %}
+    </style>
+</head>
+<body class="barra">
+    <nav class="navbar bg-dark navbar-dark navbar-expand-md">
+        <div class="container">
+            <a href="#" alt="logo" class="navbar-brand">
+                <img class="rounded" src="{% static 'produto/images/logo.jpg' %}" style="width: 65px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <div class="navbar-nav mr-auto">
+                    <div class="dropdown">
+                        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img src="{% static 'produto/images/skin/database_add.png' %}"> Cadastrar
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Categoria</a>
+                            <a class="dropdown-item" href="{% url 'produto:cadastra_produto' %}">Produto</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img src="{% static 'produto/images/skin/database_table.png' %}"> Buscar
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Categorias</a>
+                            <a class="dropdown-item" href="{% url 'produto:pesquisa_produto' %}">Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block conteudo %}
+
+        {% endblock %}
+    </div>
+
+    <script src="{% static 'produto/js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'produto/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'produto/js/jquery.mask.js' %}"></script>
+    <script src="{% static 'produto/js/popper.js' %}"></script>
+    <script src="{% static 'produto/js/bootstrap.js' %}"></script>
+    <script src="{% static 'produto/js/script.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            {% block domready %}
+
+            {% endblock %}
+        });
+    </script>
+</body>
+</html>

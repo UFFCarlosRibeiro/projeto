@@ -1,0 +1,23 @@
+﻿1. Acrescentar decorator @login_required
+2. Editar settings.py
+3. Criar app denominada autenticacao com o comando python manage.py startapp autenticacao
+4. Editar urls.py do projeto incluindo esta aplicação
+5. Editar settings.py do projeto incluindo esta aplicação
+6. Criar urls.py com duas configurações:
+   - login
+   - logout
+7. Criar form para validar usuario
+8. Criar página de login.html dentro de templates/registration
+8a. Criar um usuário com o comando python manage.py createsuperuser
+------------------------------------------------------------------------------------------------------------------------
+9. Remover decorator e criar um middleware denominado 'autenticacao.middleware.LoginRequiredMiddleware',
+10. Acrescentar middleware em settings.py
+------------------------------------------------------------------------------------------------------------------------
+11. Editar a classe Produto acrescentando o campo user
+12. Rodar makemigrations e migrate
+13. Acrescentar em produto o usuário que o cadastrou
+14. Criar um segundo usuário usando a tela de administração
+15. Impedir que um usuário remova um produto que não tenha sido cadastrado por ele.
+16. Tentar remover um produto usando o usuário que não cadastrou o produto
+17. Remover da tela de edição o botão Remover se o produto não tiver sido cadastrado pelo usuário logado.
+------------------------------------------------------------------------------------------------------------------------
